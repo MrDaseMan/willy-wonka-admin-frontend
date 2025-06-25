@@ -1,0 +1,14 @@
+//! Example transition
+.ease-fade-enter-active,
+.ease-fade-leave-active {
+    transition: opacity 0.25s ease;
+
+    opacity: 1;
+}
+
+.ease-fade-enter-from,
+.ease-fade-leave-to {
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}

@@ -1,0 +1,7 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": [
+    // Exclude all folders that start with an underscore
+    "**/_*/**"
+  ]
+}

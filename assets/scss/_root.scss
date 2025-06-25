@@ -1,0 +1,402 @@
+@use "mixins" as mixins;
+
+:root {
+	--breakpoints-xs: 480px;
+	--breakpoints-sm: 576px;
+	--breakpoints-md: 768px;
+	--breakpoints-lg: 992px;
+	--breakpoints-xl: 1200px;
+	--breakpoints-xxl: 1400px;
+
+	--white: #fff;
+	--black: #000;
+	--gray-dark-theme-25: #fdfdfd;
+	--gray-dark-theme-50: #f8f8f8;
+	--gray-dark-theme-100: #f1f1f1;
+	--gray-dark-theme-200: #e9e9e9;
+	--gray-dark-theme-300: #d7d7d7;
+	--gray-dark-theme-400: #a5a5a5;
+	--gray-dark-theme-500: #727272;
+	--gray-dark-theme-600: #3b3b3b;
+	--gray-dark-theme-700: #2a2a2a;
+	--gray-dark-theme-800: #1e1e1e;
+	--gray-dark-theme-900: #191919;
+	--gray-light-theme-25: #fcfcfd;
+	--gray-light-theme-50: #f9fafb;
+	--gray-light-theme-100: #f2f4f7;
+	--gray-light-theme-200: #e2e5ec;
+	--gray-light-theme-300: #d0d5dd;
+	--gray-light-theme-400: #98a2b3;
+	--gray-light-theme-500: #667085;
+	--gray-light-theme-600: #475467;
+	--gray-light-theme-700: #344054;
+	--gray-light-theme-800: #1d2939;
+	--gray-light-theme-900: #101828;
+	--red-25: #fffbfa;
+	--red-50: #fef3f2;
+	--red-100: #fee4e2;
+	--red-200: #fecdca;
+	--red-300: #fda29b;
+	--red-400: #f97066;
+	--red-500: #f04438;
+	--red-600: #d92d20;
+	--red-700: #b42318;
+	--red-800: #912018;
+	--red-900: #7a271a;
+	--yellow-25: #fffcf5;
+	--yellow-50: #fffaeb;
+	--yellow-100: #fef0c7;
+	--yellow-200: #fedf89;
+	--yellow-300: #fec84b;
+	--yellow-400: #fdb022;
+	--yellow-500: #f79009;
+	--yellow-600: #dc6803;
+	--yellow-700: #b54708;
+	--yellow-800: #93370d;
+	--yellow-900: #7a2e0e;
+	--green-25: #f6fef9;
+	--green-50: #ecfdf3;
+	--green-100: #d1fadf;
+	--green-200: #a6f4c5;
+	--green-300: #6ce9a6;
+	--green-400: #32d583;
+	--green-500: #12b76a;
+	--green-600: #039855;
+	--green-700: #027a48;
+	--green-800: #05603a;
+	--green-900: #054f31;
+	--blue-gray-25: #fcfcfd;
+	--blue-gray-50: #f8f9fc;
+	--blue-gray-100: #eaecf5;
+	--blue-gray-200: #d5d9eb;
+	--blue-gray-300: #afb5d9;
+	--blue-gray-400: #717bbc;
+	--blue-gray-500: #4e5ba6;
+	--blue-gray-600: #3e4784;
+	--blue-gray-700: #363f72;
+	--blue-gray-800: #293056;
+	--blue-gray-900: #101323;
+	--blue-25: #f5faff;
+	--blue-50: #eff8ff;
+	--blue-100: #d1e9ff;
+	--blue-200: #b2ddff;
+	--blue-300: #84caff;
+	--blue-400: #53b1fd;
+	--blue-500: #2e90fa;
+	--blue-600: #1570ef;
+	--blue-700: #175cd3;
+	--blue-800: #1849a9;
+	--blue-900: #194185;
+	--indigo-25: #f5f8ff;
+	--indigo-50: #eef4ff;
+	--indigo-100: #e0eaff;
+	--indigo-200: #c7d7fe;
+	--indigo-300: #a4bcfd;
+	--indigo-400: #8098f9;
+	--indigo-500: #6172f3;
+	--indigo-600: #444ce7;
+	--indigo-700: #3538cd;
+	--indigo-800: #2d31a6;
+	--indigo-900: #2d3282;
+	--purple-25: #fafaff;
+	--purple-50: #f4f3ff;
+	--purple-100: #ebe9fe;
+	--purple-200: #d9d6fe;
+	--purple-300: #bdb4fe;
+	--purple-400: #9b8afb;
+	--purple-500: #7a5af8;
+	--purple-600: #6938ef;
+	--purple-700: #5925dc;
+	--purple-800: #4a1fb8;
+	--purple-900: #3e1c96;
+	--pink-25: #fef6fb;
+	--pink-50: #fdf2fa;
+	--pink-100: #fce7f6;
+	--pink-200: #fcceee;
+	--pink-300: #faa7e0;
+	--pink-400: #f670c7;
+	--pink-500: #ee46bc;
+	--pink-600: #dd2590;
+	--pink-700: #c11574;
+	--pink-800: #9e165f;
+	--pink-900: #851651;
+	--orange-25: #fffaf5;
+	--orange-50: #fff6ed;
+	--orange-100: #ffead5;
+	--orange-200: #fddcab;
+	--orange-300: #feb273;
+	--orange-400: #fd853a;
+	--orange-500: #fb6514;
+	--orange-600: #ec4a0a;
+	--orange-700: #c4320a;
+	--orange-800: #9c2a10;
+	--orange-900: #7e2410;
+	--teal-25: #f3fffe;
+	--teal-50: #e1fffb;
+	--teal-100: #ccfdf8;
+	--teal-200: #b0fbf1;
+	--teal-300: #84efe3;
+	--teal-400: #45e0ce;
+	--teal-500: #2bd5c0;
+	--teal-600: #23c7b4;
+	--teal-700: #0cad9a;
+	--teal-800: #0c8778;
+	--teal-900: #056055;
+	--cyan-25: #f2feff;
+	--cyan-50: #e3fcfe;
+	--cyan-100: #cbfaff;
+	--cyan-200: #b2f1f8;
+	--cyan-300: #88eef7;
+	--cyan-400: #58e0ed;
+	--cyan-500: #3cd4e2;
+	--cyan-600: #25c1d0;
+	--cyan-700: #0ea5b2;
+	--cyan-800: #0e8a96;
+	--cyan-900: #096169;
+	--lime-25: #fffff1;
+	--lime-50: #ffffd4;
+	--lime-100: #fefeb5;
+	--lime-200: #fbfb9a;
+	--lime-300: #f2f274;
+	--lime-400: #e4e451;
+	--lime-500: #d3d332;
+	--lime-600: #bebe1c;
+	--lime-700: #a3a30c;
+	--lime-800: #888805;
+	--lime-900: #6f6f07;
+	--brown-25: #fff6f5;
+	--brown-50: #ffe9e6;
+	--brown-100: #fcd5ce;
+	--brown-200: #fac4ba;
+	--brown-300: #eba89d;
+	--brown-400: #e0978b;
+	--brown-500: #d1877a;
+	--brown-600: #be776a;
+	--brown-700: #aa655a;
+	--brown-800: #8b5146;
+	--brown-900: #73423a;
+	--accent-25: var(--brown-25);
+	--accent-50: var(--brown-50);
+	--accent-100: var(--brown-100);
+	--accent-200: var(--brown-200);
+	--accent-300: var(--brown-300);
+	--accent-400: var(--brown-400);
+	--accent-500: var(--brown-500);
+	--accent-600: var(--brown-600);
+	--accent-700: var(--brown-700);
+	--accent-800: var(--brown-800);
+	--accent-900: var(--brown-900);
+
+	@include mixins.increase-specificity($depth: 5) {
+		--el-color-primary: var(--accent-600);
+	}
+}
+
+:root {
+	.theme {
+		&-dark {
+			// default
+			--clr-sub-default: rgba(32, 36, 42, 0.15);
+			--clr-sub-hover: rgba(35, 39, 45, 0.3);
+			--clr-sub-active-1: rgba(45, 50, 58, 0.3);
+			--clr-sub-active-2: rgba(40, 45, 53, 0.3);
+			--clr-sub-disabled: rgba(34, 39, 45, 0.15);
+
+			--clr-background: rgb(28, 32, 38);
+			--clr-background-hover: rgb(23, 27, 33);
+			--clr-background-active: rgb(33, 37, 43);
+
+			--clr-input: rgba(28, 32, 38, 0.15);
+			--clr-input-hover: rgba(23, 27, 33, 0.3);
+			--clr-input-active: rgba(33, 37, 43, 0.3);
+
+			--clr-impr-default: rgba(29, 33, 39, 0.15);
+			--clr-stroke: rgba(255, 255, 255, 0.15);
+			--clr-stroke-active: rgb(56, 66, 81, 15);
+
+			// glyphs
+			--clr-glyph-title: #e6e6e6;
+			--clr-glyph-body: #8d97a6;
+			--clr-glyph-tertiary: #586271;
+
+			// buttons
+			--clr-buttons-glyph-title: var(--clr-glyph-title);
+			--clr-buttons-glyph-body: #7b7f86;
+			--clr-buttons-glyph-tertiary: #b5b5b5;
+
+			--clr-buttons-primary: rgba(21, 21, 21, 0.15);
+			--clr-buttons-primary-20: rgba(21, 21, 21, 0.02);
+			--clr-buttons-primary-hover: rgba(43, 43, 43, 0.15);
+			--clr-buttons-primary-active: rgba(230, 230, 230, 0.15);
+			--clr-buttons-stroke: #0d0d0d;
+
+			// buttons
+			--clr-buttons-glyph: var(--clr-glyph-title);
+			--clr-buttons-primary: rgba(247, 247, 247, 0.15);
+			--clr-buttons-primary-20: rgba(#f7f7f7, 0.02);
+			--clr-buttons-primary-hover: rgba(240, 240, 240, 0.15);
+			--clr-buttons-primary-active: rgba(230, 230, 230, 0.15);
+			--clr-buttons-stroke: #f1f1f1;
+
+			// other clr
+			--clr-pink: #dc97f2;
+			--clr-pink-15: #e9a8ff;
+			--clr-pink-10: #e9a8ff;
+			--clr-pink-5: #e9a8ff;
+
+			--clr-blue: #7fc7dd;
+			--clr-blue-15: #8fd5eb;
+			--clr-blue-10: #8fd5eb;
+			--clr-blue-5: #8fd5eb;
+
+			// header
+			--clr-header-15: rgba(0, 0, 0, 0.15);
+
+			// shadow #151515 15%
+			--clr-shadow-default: transparent;
+
+			// gradient
+			--gradient-landing: linear-gradient(
+				hsl(158, 100%, 50%),
+				hsl(252, 100%, 50%),
+				hsl(358, 100%, 50%)
+			);
+			--gradient-landing-opacity: 0.25;
+			--gradient-landing-blur: 90px;
+
+			--modal-background-1:
+				linear-gradient(
+					98deg,
+					rgba(11, 17, 24, 0.3) 0%,
+					rgba(11, 17, 24, 0.3) 25%,
+					rgba(11, 17, 24, 0.3) 50%,
+					rgba(11, 17, 24, 0.3) 75%,
+					rgba(11, 17, 24, 0.3) 100%
+				),
+				rgba(25, 31, 38, 0.45);
+			--modal-background-2:
+				linear-gradient(
+					98deg,
+					color(display-p3 0.0471 0.0667 0.0902 / 0) 0%,
+					color(display-p3 0.0471 0.0667 0.0902 / 0) 25%,
+					color(display-p3 0.0471 0.0667 0.0902 / 0.3) 50%,
+					color(display-p3 0.0471 0.0667 0.0902 / 0) 75%,
+					color(display-p3 0.0471 0.0667 0.0902 / 0) 100%
+				),
+				color(display-p3 0.102 0.1216 0.1451 / 0.45);
+		}
+
+		&-light {
+			// default
+			--clr-sub-default: rgba(255, 255, 255, 0.15);
+			--clr-sub-hover: rgba(248, 248, 248, 0.15);
+			--clr-sub-active-1: rgba(241, 241, 241, 0.15);
+			--clr-sub-active-2: rgba(245, 245, 245, 0.15);
+			--clr-sub-disabled: rgba(239, 239, 239, 0.15);
+
+			--clr-background: rgb(250, 250, 250);
+			--clr-background-hover: rgb(240, 240, 240);
+			--clr-background-active: rgb(230, 230, 230);
+
+			--clr-input: rgba(247, 247, 247, 0.15);
+			--clr-input-hover: rgba(240, 240, 240, 0.15);
+			--clr-input-active: rgba(230, 230, 230, 0.15);
+
+			--clr-impr-default: rgba(250, 250, 250, 0.15);
+			--clr-stroke: rgba(0, 0, 0, 0.075);
+			--clr-stroke-active: rgba(221, 221, 221, 0.15);
+
+			// glyphs
+			--clr-glyph-title: #151515;
+			--clr-glyph-body: #7b7f86;
+			--clr-glyph-tertiary: #b5b5b5;
+
+			// buttons
+			--clr-buttons-glyph-title: #151515;
+			--clr-buttons-glyph-body: #8d97a6;
+			--clr-buttons-glyph-tertiary: #586271;
+
+			--clr-buttons-glyph: #151515;
+			--clr-buttons-primary: rgba(21, 21, 21, 0.15);
+			--clr-buttons-primary-20: rgba(#151515, 0.02);
+			--clr-buttons-primary-hover: rgba(43, 43, 43, 0.15);
+			--clr-buttons-primary-active: rgba(13, 13, 13, 0.15);
+			--clr-buttons-stroke: rgba(46, 46, 46, 0.15);
+
+			// other clr
+			--clr-pink: #e5b2f6;
+			--clr-pink-15: #f2d1fe;
+			--clr-pink-10: #f7e1ff;
+			--clr-pink-5: #f8e3ff;
+
+			--clr-blue: #8fd5eb;
+			--clr-blue-15: rgba(143, 213, 235, 0.4);
+			--clr-blue-10: rgba(143, 213, 235, 0.3);
+			--clr-blue-5: rgba(143, 213, 235, 0.2);
+
+			// header
+			--clr-header-15: rgba(255, 255, 255, 0.15);
+
+			// shadow #151515 15%
+			--clr-shadow-default: rgba(15, 15, 15, 0.05);
+
+			// gradient
+			--gradient-landing: linear-gradient(
+				hsl(177, 100%, 50%),
+				hsl(295, 100%, 50%),
+				hsl(198, 100%, 50%)
+			);
+			--gradient-landing-opacity: 0;
+			--gradient-landing-blur: 100px;
+
+			--modal-background-1:
+				linear-gradient(
+					98deg,
+					rgba(255, 255, 255, 0.3) 0%,
+					rgba(255, 255, 255, 0.3) 25%,
+					rgba(255, 255, 255, 0.3) 50%,
+					rgba(255, 255, 255, 0.3) 75%,
+					rgba(255, 255, 255, 0.3) 100%
+				),
+				rgba(205, 205, 205, 0.45);
+			--modal-background-2:
+				linear-gradient(
+					98deg,
+					color(display-p3 1 1 1 / 0) 0%,
+					color(display-p3 1 1 1 / 0) 25%,
+					color(display-p3 1 1 1 / 0.3) 50%,
+					color(display-p3 1 1 1 / 0) 75%,
+					color(display-p3 1 1 1 / 0) 100%
+				),
+				color(display-p3 0.8042 0.8042 0.8042 / 0.45);
+		}
+	}
+
+	--clr-red: #ff2525;
+	--clr-red-40: rgba(255, 37, 37, 0.4);
+	--clr-red-15: rgba(255, 37, 37, 0.15);
+
+	--clr-light-green: rgb(51, 194, 0);
+	--clr-light-green-15: rgba(51, 194, 0, 0.15);
+
+	--clr-chart-red: #ff0067;
+
+	--font-size-xxsmall: 12px;
+	--font-size-xsmall: 14px;
+	--font-size-small: 16px;
+	--font-size-medium: 20px;
+	--font-size-large: 24px;
+	--font-size-xlarge: 28px;
+	--font-size-xxlarge: 32px;
+	--font-size-xxxlarge: 36px;
+	--font-size-subtitle: 48px;
+	--font-size-title: 64px;
+	--font-size-megatitle: 96px;
+
+	--breakpoints-xs: 480px;
+	--breakpoints-sm: 576px;
+	--breakpoints-md: 768px;
+	--breakpoints-lg: 992px;
+	--breakpoints-xl: 1200px;
+	--breakpoints-xxl: 1400px;
+}
